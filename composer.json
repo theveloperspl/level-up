@@ -1,0 +1,74 @@
+{
+    "name": "cjmellor/level-up",
+    "description": "This package allows users to gain experience points (XP) and progress through levels by performing actions on your site. It can provide a simple way to track user progress and implement gamification elements into your application",
+    "keywords": [
+        "cjmellor",
+        "laravel",
+        "level-up",
+        "gamification",
+        "gamify"
+    ],
+    "homepage": "https://github.com/cjmellor/level-up",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Mellor",
+            "email": "chris@mellor.pizza",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^10.0",
+        "laravel/pint": "^1.10",
+        "spatie/laravel-package-tools": "^1.15"
+    },
+    "require-dev": {
+        "driftingly/rector-laravel": "^0.21.0",
+        "nunomaduro/collision": "^7.5.2",
+        "orchestra/testbench": "^8.5.3",
+        "pestphp/pest": "^2.6.1",
+        "pestphp/pest-plugin-arch": "^v2.0.2",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "pestphp/pest-plugin-type-coverage": "^2.0",
+        "plannr/laravel-fast-refresh-database": "^1.0.2",
+        "rector/rector": "^0.17.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "LevelUp\\Experience\\": "src/",
+            "LevelUp\\Experience\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LevelUp\\Experience\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "lint": "vendor/bin/pint",
+        "format": "vendor/bin/rector process",
+        "dry-format": "vendor/bin/rector process --dry-run",
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LevelUp\\Experience\\LevelUpServiceProvider"
+            ],
+            "aliases": {
+                "Experience": "LevelUp\\Experience\\Facades\\Experience"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
