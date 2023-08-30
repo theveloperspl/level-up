@@ -2,6 +2,7 @@
 
 namespace LevelUp\Experience\Events;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
 
@@ -14,7 +15,7 @@ class PointsIncreased
         public int $totalPoints,
         public string $type,
         public ?string $reason,
-        public Model $user,
+        public User $user,
     ) {
     }
 }

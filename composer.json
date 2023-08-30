@@ -1,14 +1,22 @@
 {
-    "name": "theveloperspl/level-up",
+    "name": "cjmellor/level-up",
     "description": "This package allows users to gain experience points (XP) and progress through levels by performing actions on your site. It can provide a simple way to track user progress and implement gamification elements into your application",
     "keywords": [
+        "cjmellor",
         "laravel",
         "level-up",
         "gamification",
         "gamify"
     ],
-    "homepage": "https://github.com/theveloperspl/level-up",
+    "homepage": "https://github.com/cjmellor/level-up",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Mellor",
+            "email": "chris@mellor.pizza",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^8.1",
         "illuminate/contracts": "^10.0",
