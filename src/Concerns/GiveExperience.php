@@ -32,10 +32,9 @@ trait GiveExperience
         }
 
         $lastLevel = Level::orderByDesc(column: 'level')->first();
-        throw_if(
-            condition: isset($lastLevel->next_level_experience) && $amount > Level::orderByDesc(column: 'level')->first()->next_level_experience,
-            message: 'Points exceed the last level\'s experience points.',
-        );
+        if($amount > $lastLevel->next_level_experience) {
+            $amount = $lastLevel->next_level_experience;
+        }
 
         /**
          * If the Multiplier Service is enabled, apply the Multipliers.
