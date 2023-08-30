@@ -2,7 +2,7 @@
 
 namespace LevelUp\Experience\Events;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 use Illuminate\Foundation\Events\Dispatchable;
 
 class UserLevelledUp
@@ -10,7 +10,7 @@ class UserLevelledUp
     use Dispatchable;
 
     public function __construct(
-        public Model $user,
+        public User $user,
         public int $level
     ) {
     }
